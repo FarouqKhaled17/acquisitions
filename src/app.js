@@ -5,7 +5,6 @@ import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes.js';
-import { timestamp } from 'drizzle-orm/gel-core';
 
 const app = express();
 app.use(helmet());
