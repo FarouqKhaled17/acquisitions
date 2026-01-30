@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes.js';
+import secMiddleware from './middlewares/security.middleware.js';
 
 const app = express();
 app.use(helmet());
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(secMiddleware);
 
 app.use(morgan('combined', {
   stream: {
